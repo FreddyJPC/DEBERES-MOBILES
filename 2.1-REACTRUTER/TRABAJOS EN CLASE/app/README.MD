@@ -1,72 +1,49 @@
- - Descripción General
+# app
 
-    Este proyecto es una aplicación React que utiliza Refiné y Ant Design para gestionar un conjunto de recursos. Entre los recursos gestionados se incluyen productos, categorías y entradas de blog. La aplicación permite a los usuarios autenticados realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre estos recursos.
+<div align="center" style="margin: 30px;">
+    <a href="https://refine.dev">
+    <img alt="refine logo" src="https://refine.ams3.cdn.digitaloceanspaces.com/readme/refine-readme-banner.png">
+    </a>
+</div>
+<br/>
 
- - Estructura de Archivos
+This [Refine](https://github.com/refinedev/refine) project was generated with [create refine-app](https://github.com/refinedev/refine/tree/master/packages/create-refine-app).
 
-    La aplicación está organizada en varios componentes y páginas clave, cada una responsable de diferentes funcionalidades:
+## Getting Started
 
-    - create.tsx: Componente para la creación de productos.
-    - edit.tsx: Componente para la edición de productos existentes.
-    - list.tsx: Componente para listar productos.
-    - show.tsx: Componente para mostrar los detalles de un producto.
-    - index.tsx: Archivo de barril que exporta todos los componentes anteriores.
-    - app.tsx: Componente principal de la aplicación que configura el enrutamiento y los proveedores.
+A React Framework for building internal tools, admin panels, dashboards & B2B apps with unmatched flexibility ✨
 
- - Descripción de Componentes
+Refine's hooks and components simplifies the development process and eliminates the repetitive tasks by providing industry-standard solutions for crucial aspects of a project, including authentication, access control, routing, networking, state management, and i18n.
 
-    - create.tsx
-        - El componente ProductCreate permite la creación de un nuevo producto. Utiliza el hook useForm de Refiné para manejar el estado del formulario y la lógica de guardado. Incluye campos para el nombre, descripción, categoría, precio y estado del producto. Las categorías se obtienen utilizando el hook useSelect, que proporciona un selector desplegable de categorías disponibles.
+## Available Scripts
 
- - edit.tsx
-        - El componente ProductEdit permite la edición de un producto existente. Similar al componente de creación, utiliza useForm para manejar el formulario y useSelect para las categorías. Además, usa useShow para obtener y mostrar los datos actuales del producto que se está editando.
+### Running the development server.
 
- - list.tsx
-        - El componente ProductList muestra una lista de productos en una tabla. Utiliza useTable para gestionar las propiedades de la tabla y useMany para obtener las categorías asociadas con cada producto. La tabla incluye columnas para el ID, nombre, descripción, categoría, precio, estado y fecha de creación del producto. También proporciona botones para editar, mostrar y eliminar productos.
+```bash
+    npm run dev
+```
 
- - show.tsx
-        - El componente ProductShow muestra los detalles de un producto específico. Utiliza useShow para obtener los datos del producto y useOne para obtener la categoría del producto. Muestra los detalles del producto, incluyendo el ID, nombre, descripción, categoría, precio, estado y fecha de creación.
+### Building for production.
 
- - index.tsx
-        - Este archivo simplemente reexporta los componentes create.tsx, edit.tsx, list.tsx y show.tsx para facilitar su importación en otros lugares de la aplicación.
+```bash
+    npm run build
+```
 
- - app.tsx
-        - Este es el componente principal de la aplicación. Configura los proveedores necesarios, incluyendo el dataProvider, notificationProvider, routerProvider y authProvider. Define las rutas de la aplicación, incluyendo rutas protegidas que requieren autenticación para acceder. Configura el diseño principal utilizando ThemedLayoutV2 y ThemedSiderV2, y gestiona las rutas para los recursos blog_posts, categories y products.
+### Running the production server.
 
- - Funcionamiento del Proyecto
+```bash
+    npm run start
+```
 
-    1. Autenticación: La aplicación utiliza un authProvider para gestionar la autenticación de usuarios. Los usuarios deben estar autenticados para acceder a las rutas protegidas.
+## Learn More
 
-    2. Proveedores y Configuración:
+To learn more about **Refine**, please check out the [Documentation](https://refine.dev/docs)
 
-        - dataProvider: Proporciona la fuente de datos para la aplicación, en este caso, una API REST falsa.
-        - notificationProvider: Maneja las notificaciones dentro de la aplicación.
-        - routerProvider: Configura el enrutamiento utilizando react-router-v6.
-        - authProvider: Proveedor de autenticación que gestiona el estado de autenticación de los usuarios.
-    3. Enrutamiento: La configuración de rutas en app.tsx define las rutas para cada recurso (entradas de blog, categorías y productos), incluyendo rutas para listar, crear, editar y mostrar detalles de cada recurso.
+- **REST Data Provider** [Docs](https://refine.dev/docs/core/providers/data-provider/#overview)
+- **Ant Design** [Docs](https://refine.dev/docs/ui-frameworks/antd/tutorial/)
+- **React Router** [Docs](https://refine.dev/docs/core/providers/router-provider/)
+- **Custom Auth Provider** [Docs](https://refine.dev/docs/core/providers/auth-provider/)
 
-    4. Componentes de Recursos: Cada recurso (entradas de blog, categorías y productos) tiene componentes específicos para las operaciones CRUD. Estos componentes utilizan hooks y componentes de Refiné para interactuar con la API y gestionar el estado del formulario y la tabla.
+## License
 
- - Recursos
-
-    - Blog Posts:
-
-        - Ruta de listado: /blog-posts
-        - Ruta de creación: /blog-posts/create
-        - Ruta de edición: /blog-posts/edit/:id
-        - Ruta de detalles: /blog-posts/show/:id
-    - Categories:
-
-        - Ruta de listado: /categories
-        - Ruta de creación: /categories/create
-        - Ruta de edición: /categories/edit/:id
-        - Ruta de detalles: /categories/show/:id
-    - Products:
-
-        - Ruta de listado: /products
-        - Ruta de creación: /products/create
-        - Ruta de edición: /products/edit/:id
-        - Ruta de detalles: /products/show/:id
- - Conclusión
-
-    - Este proyecto es una aplicación de gestión que permite a los usuarios autenticados realizar operaciones CRUD sobre varios recursos. Utiliza Refiné y Ant Design para proporcionar una interfaz de usuario moderna y funcionalidades avanzadas de manejo de formularios y tablas. La configuración y los proveedores aseguran que la aplicación sea modular y fácil de mantener.
+MIT
